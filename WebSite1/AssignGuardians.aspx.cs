@@ -24,6 +24,15 @@ public partial class Default3 : System.Web.UI.Page
             SqlCommand cmd = new SqlCommand("UPDATE Student SET FacultyId=@facid, HasGuardian=\'True\' WHERE Id=@studid", con);
             cmd.Parameters.AddWithValue("facid", FacId);
             cmd.Parameters.AddWithValue("studid", StudId);
+            cmd.ExecuteNonQuery();
+        }
+        catch(Exception ex)
+        {
+
+        }
+        finally
+        {
+            con.Close();
         }
     }
 }
